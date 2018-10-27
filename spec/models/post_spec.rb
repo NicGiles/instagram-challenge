@@ -24,8 +24,3 @@ RSpec.describe Post, type: :model do
   end
 
 end
-
-#   t = updated_at.in_time_zone("London")
-#   t.strftime("%a %b %e %T")
-#   end
-# end
