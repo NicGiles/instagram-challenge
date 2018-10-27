@@ -17,7 +17,6 @@ RSpec.feature 'Signing up', type: :feature do
     click_on('Logout')
     login
     expect(page).to have_content('Signed in successfully.')
-
   end
 
   scenario 'User can log out' do
