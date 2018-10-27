@@ -8,6 +8,7 @@ Create post
 
 <% @posts.each do |post| %>
   <p> <%= post.message %> </p>
+  <p> <%= post.date_shown %> </p>
   <% if current_user.id == post.user_id %>
     <%= link_to 'Delete', post, :data => {:confirm => "Do you really want to delete #{post.message}?"}, :method => :delete %>
     <%= link_to 'Edit Post', edit_post_path(post) %>

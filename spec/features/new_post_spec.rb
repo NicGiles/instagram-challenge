@@ -9,6 +9,15 @@ RSpec.feature 'Creating new post', type: :feature do
     expect(page).to have_content('This is a message')
   end
 
+  scenario 'Posts display time created' do
+    sign_up
+    click_on('Create post')
+    fill_in('Message', with: 'This is a message')
+    click_button('Submit')
+    post_time = Time.now
+    Timecop.freeze(post_time)
+    expect(page).to have_content(post_time.strftime("%a %b %e %T"))
+  end
   # scenario 'Posts appear in reverse chronological order' do
   #   sign_up
   #   click_on('Create post')
