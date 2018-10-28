@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Creating new post', type: :feature do
@@ -18,7 +20,7 @@ RSpec.feature 'Creating new post', type: :feature do
     Timecop.freeze(post_time)
     expect(page).to have_content(post_time.strftime("%a %b %e %T"))
   end
-  
+
   # scenario 'Posts appear in reverse chronological order' do
   #   sign_up
   #   click_on('Create post')
